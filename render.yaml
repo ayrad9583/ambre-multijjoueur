@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: ambre-3724-admin-server
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: ADMIN_CODE
+        value: "1917"
+      - key: JWT_SECRET
+        generateValue: true
